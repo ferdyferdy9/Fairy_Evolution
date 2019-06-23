@@ -30,7 +30,8 @@ class BulletGenerator{
       case EVEN    : ls = even();      break;
       case CIRCULAR: ls = circular();  break;
     }
-    world.bullets.addAll(Arrays.asList(ls));
+    for(int i=0; i<ls.length;i++)
+      world.bullets.add(ls[i]);
   }
   
   Bullet[] odd(){

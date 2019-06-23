@@ -82,29 +82,28 @@ class FairyDNA{
     bullets = new ShotDNA[count];
     for(int i=0;i<count;i++){
       bullets[i] = new ShotDNA();
-      bullets[i].amount     = int  (list[6+i*10]);
-      bullets[i].spreadRad  = float(list[7+i*10]);
-      bullets[i].shotType   = ShotType.get  (int(list[8+i*10]));
-      bullets[i].bulletType = BulletType.get(int(list[9+i*10]));
-      bullets[i].maxSpeed   = float(list[10+i*10]);
-      bullets[i].accel.x    = float(list[11+i*10]);
-      bullets[i].accel.y    = float(list[12+i*10]);
-      bullets[i].accel.z    = float(list[13+i*10]);
-      bullets[i].c          = int  (list[14+i*10]);
-      bullets[i].duration   = float(list[15+i*10]);
+      bullets[i].amount     = int  (list[6+i*9]);
+      bullets[i].spreadRad  = float(list[7+i*9]);
+      bullets[i].shotType   = ShotType.get  (int(list[8+i*9]));
+      bullets[i].bulletType = BulletType.get(int(list[9+i*9]));
+      bullets[i].maxSpeed   = float(list[10+i*9]);
+      bullets[i].accel.x    = float(list[11+i*9]);
+      bullets[i].accel.y    = float(list[12+i*9]);
+      bullets[i].c          = int  (list[13+i*9]);
+      bullets[i].duration   = float(list[14+i*9]);
     }
   }
   
   String toString(){
     String text="{";
-    text += hpSpeed + ", ";
-    text += manaRegen + ", ";
-    text += enemyRad + ", ";
-    text += idealRad + ", ";
-    text += bulletRad + ", ";
-    text += laserRad + ", {";
+    text += hpSpeed + ",";
+    text += manaRegen + ",";
+    text += enemyRad + ",";
+    text += idealRad + ",";
+    text += bulletRad + ",";
+    text += laserRad + ",{";
     for(int i=0;i<bullets.length-1;i++)
-      text+= bullets[i] + ", ";
+      text+= bullets[i] + ",";
     text += bullets[bullets.length-1] + "}}";
     
     return text;

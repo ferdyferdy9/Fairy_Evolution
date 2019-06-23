@@ -73,13 +73,13 @@ class ShotDNA{
   
   String toString(){
     String text="{";
-    text += amount + ", ";
-    text += spreadRad + ", ";
-    text += shotType.value + ", ";
-    text += bulletType.value + ", ";
-    text += maxSpeed + ", ";
-    text += accel + ", ";
-    text += c + ", ";
+    text += amount + ",";
+    text += spreadRad + ",";
+    text += shotType.value + ",";
+    text += bulletType.value + ",";
+    text += maxSpeed + ",";
+    text += "["+accel.x+","+accel.y+"],";
+    text += c + ",";
     text += duration + "}";
     return text;
   }

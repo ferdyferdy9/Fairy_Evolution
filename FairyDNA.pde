@@ -70,33 +70,28 @@ class FairyDNA{
       if(dna.charAt(i) == '{')
         count++;
     
-    dna = dna.replace("{"," ");
-    dna = dna.replace("}"," ");
-    dna = dna.replace("["," ");
-    dna = dna.replace("]"," ");
-    dna = dna.replace(", "," ");
+    String[] list = splitTokens(dna, " ,[]{}" );
     
-    Scanner s = new Scanner(dna);
-    hpSpeed   = s.nextFloat();
-    manaRegen = s.nextFloat();
-    enemyRad  = s.nextFloat();
-    idealRad  = s.nextFloat();
-    bulletRad = s.nextFloat();
-    laserRad  = s.nextFloat();
+    hpSpeed   = float(list[0]);
+    manaRegen = float(list[1]);
+    enemyRad  = float(list[2]);
+    idealRad  = float(list[3]);
+    bulletRad = float(list[4]);
+    laserRad  = float(list[5]);
     
     bullets = new ShotDNA[count];
     for(int i=0;i<count;i++){
       bullets[i] = new ShotDNA();
-      bullets[i].amount     = s.nextInt();
-      bullets[i].spreadRad  = s.nextFloat();
-      bullets[i].shotType   = ShotType.get(s.nextInt());
-      bullets[i].bulletType = BulletType.get(s.nextInt());
-      bullets[i].maxSpeed   = s.nextFloat();
-      bullets[i].accel.x    = s.nextFloat();
-      bullets[i].accel.y    = s.nextFloat();
-      bullets[i].accel.z    = s.nextFloat();
-      bullets[i].c          = s.nextInt();
-      bullets[i].duration   = s.nextFloat();
+      bullets[i].amount     = int  (list[6+i*10]);
+      bullets[i].spreadRad  = float(list[7+i*10]);
+      bullets[i].shotType   = ShotType.get  (int(list[8+i*10]));
+      bullets[i].bulletType = BulletType.get(int(list[9+i*10]));
+      bullets[i].maxSpeed   = float(list[10+i*10]);
+      bullets[i].accel.x    = float(list[11+i*10]);
+      bullets[i].accel.y    = float(list[12+i*10]);
+      bullets[i].accel.z    = float(list[13+i*10]);
+      bullets[i].c          = int  (list[14+i*10]);
+      bullets[i].duration   = float(list[15+i*10]);
     }
   }
   

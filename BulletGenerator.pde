@@ -35,7 +35,6 @@ class BulletGenerator{
   
   Bullet[] odd(){
     b.formation = "ODD";
-    
     Bullet[] bullets = new Bullet[dna.amount*2-1];
     int middle = (bullets.length-1)/2; // 1-9 -> 5; then -1 cuz index 0
     float step = dna.spreadRad/(bullets.length-1);

@@ -1,6 +1,9 @@
 class FairyDNA{
-  float hpSpeed;
-  float manaRegen;
+  int hp; 
+  float hpReg;
+  int mana;
+  float manaReg;
+  int speed;
   float enemyRad;
   float idealRad;
   float bulletRad;
@@ -22,8 +25,8 @@ class FairyDNA{
   }
   
   FairyDNA(
-    float hpSpeed,
-    float manaRegen,
+    float hp, float hpReg, float speed,
+    float mana, float manaReg,
     float enemyRad,
     float idealRad,
     float bulletRad,
@@ -96,8 +99,8 @@ class FairyDNA{
   
   String toString(){
     String text="{";
-    text += hpSpeed + ",";
-    text += manaRegen + ",";
+    text += hp + "," + hpReg + "," + speed + ",";
+    text += mana + "," + manaReg + ",";
     text += enemyRad + ",";
     text += idealRad + ",";
     text += bulletRad + ",";

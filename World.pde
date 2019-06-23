@@ -7,19 +7,31 @@ class World {
   Boolean isDisabled=false;
   Boolean scopeMode =false;
   
-  int bulletVar  =    5;
-  float maxDist  =  200;
-  float minHP    =   20;
-  float maxHP    =  200;
-  float minSpeed =    1;
-  float maxSpeed =    2;
-  float minMana  =  200;
-  float maxMana  = 2000;
-  float hpRegMin   = 0.01;
-  float hpRegMax   = 0.2;
-  float manaRegMin =  5;
-  float manaRegMax = 10;
-
+  // Starting baseline
+  float hp      =  100;
+  float hpReg   =    0.1;
+  float speed   =    1;
+  float mana    = 1000;
+  float manaReg =    0.01;
+  int bulletVar =    5;
+  float maxDist =  200;
+  
+  float hpmin    =   10;
+  float hpmax    = 2000;
+  float hpRegMin =    0;
+  float hpRegMax =   10;
+  float speedMin =    0;
+  float speedMax =    2;
+  float manaMin  =  200;
+  float manaMax  = 5000;
+  float manaRegMin = 0.05;
+  float manaRegmax = 0.2;
+  
+  // mutation cost XtoY: (cost)X = (1)Y;
+  float hpRegtohp = 0.01;
+  float speedtohp = 0.01;
+  float manaRegtomana = 0.0001;
+  
   World() {
     fairies = new ArrayList<Fairy>();
     bullets = new ArrayList<Bullet>();

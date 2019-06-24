@@ -1,13 +1,16 @@
+Camera2D cam;
 World world;
 
 void setup() {
   size(1200, 800);
+  cam = new Camera2D();
   world = new World();
-  world.add(100);
+  world.add(10);
 }
 
 void draw() {
   background(0);
+  cam.run();
   
   world.update();
   world.show();
@@ -29,4 +32,8 @@ void keyPressed(){
       world.update();
     }
   }
+}
+
+void mouseWheel(MouseEvent event){
+  cam.scrollMode(event);
 }

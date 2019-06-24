@@ -27,7 +27,26 @@ class World {
   float manaRegMin = 0.05;
   float manaRegmax = 0.2;
   
-  // mutation cost XtoY: (cost)X = (1)Y;
+  // mutation zone
+  Mutate hpMutate        = new Mutate(0.25 , 5);
+  Mutate hpRegMutate     = new Mutate(0.25 , 5);
+  Mutate speedMutate     = new Mutate(0.25 , 5);
+  Mutate manaMutate      = new Mutate(0.25 , 5);
+  Mutate manaRegMutate   = new Mutate(0.25 , 5);
+  Mutate enemyRadMutate  = new Mutate(0.25 , 5);
+  Mutate idealRadMutate  = new Mutate(0.25 , 5);
+  Mutate bulletRadMutate = new Mutate(0.25 , 5);
+  Mutate laserRadMutate  = new Mutate(0.25 , 5);
+  Mutate bulletMutate    = new Mutate(0.005, 5);
+  
+  Mutate amountMutate     = new Mutate(0.25 , 5);
+  Mutate spreadRadMutate  = new Mutate(0.25 , 5);
+  Mutate shotTypeMutate   = new Mutate(0.25 , 5);
+  Mutate bulletTypeMutate = new Mutate(0.25 , 5);
+  Mutate maxSpeedMutate   = new Mutate(0.25 , 5);
+  Mutate accelMutate      = new Mutate(0.25 , 5);
+  Mutate durationMutate   = new Mutate(0.25 , 5);
+  
   float hpRegtohp = 0.01;
   float speedtohp = 0.01;
   float manaRegtomana = 0.0001;

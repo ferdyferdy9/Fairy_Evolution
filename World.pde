@@ -61,16 +61,16 @@ class World {
   
   void add(int n){
     while(n-->0){
-      fairies.add(new Fairy(random(width), random(height)));
+      fairies.add(new Fairy(random(width*2), random(height*2)));
     }
   }
   
   void add(){
     float chance = random(1);
     if(chance < 0.25 || masters.size() == 0)
-      fairies.add(new Fairy(random(width), random(height)));
+      fairies.add(new Fairy(random(width*2), random(height*2)));
     else
-      fairies.add(new Fairy(random(width), random(height), masters.get((int)random(masters.size())).dna.copyData().mutate()));
+      fairies.add(new Fairy(random(width*2), random(height*2), masters.get((int)random(masters.size())).dna.copyData().mutate()));
   }
 
   void update() {
@@ -112,12 +112,11 @@ class World {
     //for (Fairy f : fairies) f.show();
     //for (Bullet b : bullets) b.show();
     
-    PVector mouse = new PVector(mouseX,mouseY);
     Fairy closest = fairies.get(0);
     
     for (Fairy f : fairies) {
       f.show();
-      if(f.dist(mouse) < closest.dist(mouse))
+      if(f.dist(cam.mouse) < closest.dist(cam.mouse))
         closest = f;
     }
     
@@ -127,13 +126,13 @@ class World {
           b.show();
     }else{
       for(Bullet b : bullets)
-        if(b.dist(mouse) < maxDist)
+        if(b.dist(cam.mouse) < maxDist)
           b.show();
     }
   }
 
   void test() {
     for (Fairy f : fairies)
-      f.shoot(new PVector(mouseX, mouseY));
+      f.shoot(cam.mouse);
   }
 }

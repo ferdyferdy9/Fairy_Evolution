@@ -22,8 +22,8 @@ void mousePressed(){
   PVector mouse = new PVector(mouseX,mouseY);
   for(Fairy f : world.fairies)
     if(mouse.dist(f) < 20)
-      println(f.dna); //<>//
-}
+      println(f.dna);
+} //<>//
 
 void keyPressed(){
   if(key == 'c'){

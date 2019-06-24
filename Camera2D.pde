@@ -8,8 +8,8 @@ class Camera2D{
   PVector mouse;
   
   Camera2D(){
-    x = -width/2;
-    y = -height/2;
+    x = width/2;
+    y = height/2;
     scale = 1;
     panKey = ' ';
     isPanKey = false;

@@ -7,14 +7,15 @@ class Bullet extends PVector{
   float maxSpeed = 10;
   
   Bullet(Fairy owner, float damage){
+    super(owner.x,owner.y);
     this.owner = owner;
     this.damage= damage;
     this.set(owner);
   }
   
   Boolean isCollide(Fairy o){
-    
-    return false;
+    if(owner == o) return false;
+    return this.dist(o) < 5;
   }
   
   float distToOwner(){
@@ -24,9 +25,11 @@ class Bullet extends PVector{
   void update(){
     vel.add(accel);
     this.add(vel);
+    accel.set(0,0);
   }
   
   void show(){
-    
+    fill(255,0,0); 
+    ellipse(x,y,10,10);
   }
 }

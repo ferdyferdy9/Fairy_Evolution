@@ -1,3 +1,4 @@
+Camera2D cam;
 World world;
 
 void test(){
@@ -8,13 +9,15 @@ void test(){
 
 void setup() {
   size(1200, 800);
+  cam = new Camera2D();
   world = new World();
-  test();
-  //world.add(100);
+  //test();
+  world.add(100);
 }
 
 void draw() {
   background(0);
+  cam.run();
   
   world.test();
   world.update();
@@ -46,4 +49,8 @@ void keyPressed(){
 
 void keyReleased(){
   world.isDisabled = false;
+}
+
+void mouseWheel(MouseEvent event){
+  cam.scrollMode(event);
 }

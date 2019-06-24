@@ -60,4 +60,9 @@ class Camera2D{
     translate(-width/2,-height/2);
     translate(x,y);
   }
+  
+  void follow(PVector target){
+    x = width/2-target.x;
+    y = height/2-target.y;
+  }
 }

@@ -1,5 +1,6 @@
 Camera2D cam;
 World world;
+Fairy target;
 
 void setup() {
   size(1200, 800);
@@ -15,15 +16,26 @@ void draw() {
   world.update();
   world.show();
   
-  //println(frameRate);
+  if(target != null){
+    cam.follow(target);
+    stroke(255);
+    noFill();
+    ellipse(target.x,target.y,100,100);
+  }
+  
+  //println(frameRate); //<>//
 }
 
 void mousePressed(){
-  PVector mouse = new PVector(mouseX,mouseY);
+  PVector mouse = cam.mouse;
   for(Fairy f : world.fairies)
-    if(mouse.dist(f) < 20)
-      println(f.dna);
-} //<>//
+    if(mouse.dist(f) < 20){
+      if(target == null)
+        target = f;
+      else
+        target = null;
+    }
+}
 
 void keyPressed(){
   if(key == 'c'){
